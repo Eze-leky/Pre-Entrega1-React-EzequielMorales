@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 // el import es un libreria para los estilos
 import styled from 'styled-components'
 import BurguerButton from './BurguerButton'
+import CartWidget from './CartWidget/CartWidget'
 
 function Navbar() {
 
@@ -13,7 +14,12 @@ function Navbar() {
   return (
     <>
       <NavContainer>
-        <h2>Menu </h2>
+        <img src="/logo1.jpg" alt='' 
+        style={{ 
+          width: "6%", height: "8vh", borderRadius: "80%"
+        }}
+        
+        />
         <div className={`links ${clicked ? 'active' : ''}`}>
           <a onClick={handleClick} href="#h">Home</a>
           <a onClick={handleClick} href="#h">Cursos</a>
@@ -24,7 +30,9 @@ function Navbar() {
           <BurguerButton clicked={clicked} handleClick={handleClick} />
         </div>
         <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
+        <CartWidget />
       </NavContainer>
+      
     </>
   )
 }
